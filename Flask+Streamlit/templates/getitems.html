@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Items</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff; /* Light blue background */
+            color: #333; /* Dark gray text */
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #4caf50; /* Green background */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Container Styles */
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Task List Styles */
+        ul.task-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.task-list li {
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #e0f7fa; /* Light cyan */
+            border: 1px solid #b2ebf2; /* Cyan border */
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        ul.task-list li span {
+            color: #00796b; /* Teal text */
+            font-weight: bold;
+        }
+
+        /* Back Link Styles */
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #4caf50; /* Green text */
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+            color: #388e3c; /* Darker green */
+        }
+
+        /* Empty Message Styles */
+        p {
+            text-align: center;
+            color: #757575; /* Gray text */
+        }
+
+        p a {
+            color: #4caf50; /* Green link */
+            text-decoration: none;
+        }
+
+        p a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Your To-Do Items</h1>
+    </header>
+    <div class="container">
+        {% if tasks %}
+        <ul class="task-list">
+            {% for task in tasks %}
+            <li>
+                <span>{{ task }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No tasks available. Add tasks from the <a href="/">home page</a>.</p>
+        {% endif %}
+        <a href="/" class="back-link">Back to Home</a>
+    </div>
+</body>
+</html>

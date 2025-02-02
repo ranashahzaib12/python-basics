@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Final Results </title>
+</head>
+<body>
+
+<table border=2>
+
+<tr>
+    Based on the marks you have {{results}}
+    {% if results>=50  %} 
+    <h2> You have passed with marks {{results}}</h2>
+    {% else %}
+    <h3>You have failed with {{results}}</h3>
+    {% endif %} 
+</tr>
+
+</table>
+
+</body>
+</html>
